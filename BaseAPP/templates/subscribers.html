@@ -1,0 +1,39 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>print</title>
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static "baseapp.css" %}">
+
+    </head>
+    <body>
+
+        <div class="general-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1 class="title">Мы скоро откроесмя<br>Оставьте Ваш имеил в форме ниже</h1>
+                        <div>
+                            <form action="" class="form-inline text-center" method="post" >{% csrf_token %}
+                                <div class="form-group">
+                                    <lable class="lable">Ваше имя: </lable>
+                                    <input type="text" name="{{ form.name.name }}">
+                                </div>
+                                <div class="form-group">
+                                    <lable class="lable" placeholder="gg">Ваше email: </lable>
+                                    <input type="text" name="{{ form.email.name }}">
+                                </div>
+                                    <button type="submit" class="btn btn-primry btn-orange">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% bootstrap_javascript %}
+        <script src="{% bootstrap_jquery_url %}"></script>
+    </body>
+</html>

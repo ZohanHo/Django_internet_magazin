@@ -1,0 +1,49 @@
+{% load static %}
+{% load bootstrap3 %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>StartApp</title>
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static "style.css" %}">
+    </head>
+    <body>
+       <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-top" style="background-color: midnightblue">раз</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-top" style="background-color: saddlebrown">два</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-top" style="background-color: blueviolet">три</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-top" style="background-color: deepskyblue">четыри</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-top" style="background-color: cadetblue">пять</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-top" style="background-color: dodgerblue">шесть</div>
+            </div>
+        </div>
+        -->
+
+        <div class="wrapper">
+            <div class="wrapper-content">
+                <!--navbar-->
+                {% include 'navbar.html' %}
+
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+        <!--footer-->
+        {% include 'footer.html' %}
+
+        {% bootstrap_javascript %}
+
+
+
+        <script src="{% bootstrap_jquery_url %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

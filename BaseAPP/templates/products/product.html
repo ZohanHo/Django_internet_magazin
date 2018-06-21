@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                {% for image in product.productimage_set.all %}
+                    <img src="{{ image.image.url }}" class="image-responsive" style="margin-top: 20px; margin-bottom: 20px">
+                {% endfor %}
+            </div>
+            <div class="col-lg-6">
+                <h1 class="text-center">
+                    {{ product.name }}
+                </h1>
+                <div class="">
+                    <p>
+                        Price: {{ product.price }}
+                    </p>
+                </div>
+                <div>
+
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#discription" aria-controls="discription" role="tab" data-toggle="tab">
+                                Description
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#delivery" aria-controls="delivery" role="tab" data-toggle="tab">
+                                Delivery
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                                Messages
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content product-discription-tab">
+                        <div role="tabpanel" class="tab-pane active" id="discription">
+                            {{ product.discription }}
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="delivery">
+                            <h3>0</h3>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <p>1</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings">
+                            <p>2</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form id="form_buying_product" class="form-inline" action="{% url 'basket_adding' %}">{% csrf_token %}
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="number" id="number">
+                            </div>
+                                <div class="form-group">
+                                    <button type="submit" id="submit_btn" class="btn btn-success btn-bay"
+                                    data-product_id = '{{ product.id }}'
+                                    data-name = '{{ product.name }}'
+                                    data-price = '{{ product.price }}'
+                                    >
+                                        Bay
+                                    </button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+<div class="col-lg-3">
+    <div class="product_item">
+        <div class="divimg">
+            <a href="{% url 'product' i.product.id %}"> <!-- хотим достучатся до определенного url, через имя. и передаем другой параметр -->
+                <img src="{{ i.image.url }}" class="img-responsive">
+            </a>
+        </div>
+        {% if i.product.discount %}
+            <div class="divdiscount">
+                <span>
+                    {{ i.product.discount }}%
+                </span>
+            </div>
+        {% endif %}
+        <h3>
+            {{ i.product.name }}
+        </h3>
+        <p>
+            {{ i.product.discription|truncatechars_html:80 }} <!-- транкейтчатс выводит с поля только 100 символов-->
+        </p>
+        <div class="divprice">
+            <h4>{{ i.product.price }} грн</h4>
+        </div>
+        <div class="add-to-card-btn divbtn">
+            <button class="btn btn-success">
+                Добавить в корзину
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="{% static "style.css" %}" xmlns="http://www.w3.org/1999/html">
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+
+            <form action="" class="">
+
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th>Назание тоара</th>
+                            <th>Количесто</th>
+                            <th>Цена за единицу</th>
+                            <th>Общая цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product_in_basket in products_in_basket %}  <!-- идем цыклом по переменой которую определили во orders.views,имеем доступ так как local()-->
+                            <tr>
+                                <td>{{ product_in_basket.product.name }}</td>
+                                <td>
+                                    <input value="{{ product_in_basket.nmb }}" type="number">   <!-- value - тукущее количество шт. в корзине, type - бигунок (больше/меньше) -->
+                                </td>
+                                <td>{{ product_in_basket.price_per_item }}</td>
+                                <td>{{ product_in_basket.total_price }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-right"> <!-- Кнопка будет справа -->
+                    <button type="submit" class="btn btn-primary btn-lg"> <!--btn-lg - кнопка большая -->
+                        Заказать
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

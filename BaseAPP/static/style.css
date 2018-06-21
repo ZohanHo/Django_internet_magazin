@@ -1,0 +1,164 @@
+html, body {
+    height: 100%;
+    max-height: 100%;
+    background-color: gainsboro;
+
+}
+
+
+.product_item {
+    width: 300px;
+    height: 420px; /*высота колонки */
+    background-color: white;
+    position: relative; /*устанавливает родительскому диву релатив, что бы можно было назначить - обсолют*/
+    border: 1px solid lightgray; /*solid - цвет акантовки у бордера*/
+    padding: 5px; /*растояние от внутренего края содержимого елемента*/
+    text-align: center; /*текст по центу*/
+    margin-bottom: 30px; /*сделать отступ на 30 пикселей сверху*/
+    margin-left: 50px;
+}
+
+.divimg {
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.divprice {
+    position: absolute;
+    bottom: 45px;
+    left: 32%;
+}
+
+.col-lg-3 {
+    width: 24%;
+}
+.section-top {
+    margin-bottom: 30px; /*сделать отступ на 30 пикселей*/
+}
+
+.divbtn {
+    position: absolute;
+    bottom: 15px;
+    left: 23%
+}
+
+.divdiscount {
+    position: absolute;
+    top: 40%; /*отступ от топа*/
+    background: mediumseagreen;
+    width: 25%; /*шырина*/
+    color: white;
+    font-weight: 700; /*что бы шрифт выделялся*/
+    padding: 2px; /*толщина дива*/
+    left: 0;
+}
+
+h3 {
+    color: #080306;
+}
+
+.nazva {
+    text-align: center;
+    color: darkgreen;
+    font-family: 'Comic Sans MS';
+    font-size: x-large;
+    font-weight: bold;
+
+
+}
+
+.footer {
+    position: relative;
+    /*margin-top: -180px;  http://htmlbook.ru/css/margin-top, отстуо от верха*/
+    background-color: white;
+    height: 180px; /*высота футера*/
+    clear: both;
+}
+
+.container-black {
+    width: 30px;
+    height: 30px;
+}
+
+.wrapper {
+    margin-right: 0;
+    min-height: 100%;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.wrapper-content {
+    /*overflow: auto;*/
+    /* padding-bottom: 180px;   http://htmlbook.ru/css/padding-bottom, отступ от содердимого до конца, для футера*/
+}
+
+.product-discription-tab{
+    padding: 15px;
+}
+
+.heder {
+    background: repeat center top;
+    margin-bottom: 0;
+    background-color: lightgrey;
+
+    }
+
+.navbar-top {
+    height: 10px;
+    background-color: #0f3535; /*первая строка*/
+    min-height: 35px;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+    font-family: Arial;
+    font-size: large;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.navbar-main {
+    background-color: #0e4444;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+
+}
+
+.basket-container {
+    position: relative;
+    width: 400px;
+    padding: 15px 10px;
+
+}
+
+.basket-items {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: gainsboro;
+    z-index: 10;
+    padding: 10px;
+}
+
+.col-top {
+    text-align: center;
+    color: white;
+    height: 150px;
+}
+
+#image-basket {
+    position: absolute;
+    left: 273px;
+    top: 4px;
+    height: 50px;
+    width: 50px;
+}
+
+#name-basket {
+    position: absolute;
+    left: 325px;
+    top: 18px;
+    color: white
+}
